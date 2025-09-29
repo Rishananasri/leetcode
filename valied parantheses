@@ -1,0 +1,35 @@
+bool isValid(String s) {
+  List<String> stack = [];
+
+  for (var sm in s.split('')) {
+    switch (sm) {
+      case '(':
+      case '{':
+      case '[':
+        stack.add(sm); 
+        break;
+
+      case ')':
+        if (stack.isEmpty || stack.removeLast() != '(') return false;
+        break;
+
+      case '}':
+        if (stack.isEmpty || stack.removeLast() != '{') return false;
+        break;
+
+      case ']':
+        if (stack.isEmpty || stack.removeLast() != '[') return false;
+        break;
+    }
+  }
+
+  return stack.isEmpty;
+}
+
+void main() {
+  print(isValid("()"));      
+  print(isValid("()[]{}"));  
+  print(isValid("(]"));      
+  print(isValid("([])"));    
+  print(isValid("([)]"));   
+}
