@@ -1,0 +1,22 @@
+class Solution {
+  List<int> sortArrayByParityII(List<int> nums) {
+    int even = 0;
+    int odd = 1;
+    int n = nums.length;
+    List<int> result = List.filled(n, 0);
+    for (int num in nums) {
+      if (num % 2 == 0) {
+        result[even] = num;
+        even += 2;
+      } else {
+        result[odd] = num;
+        odd += 2;
+      }
+    }
+    return result;
+  }
+}
+void main() {
+  Solution s = Solution();
+  print(s.sortArrayByParityII([4, 2, 5, 7]));
+}
