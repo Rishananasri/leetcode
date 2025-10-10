@@ -1,0 +1,18 @@
+class Solution {
+  List<int> sortArrayByParity(List<int> nums) {
+    List<int> even = [];
+    List<int> odd = [];
+    for (int numb in nums) {
+      if (numb.isEven) {
+        even.add(numb);
+      } else {
+        odd.add(numb);
+      }
+    }
+    return even + odd;
+  }
+}
+void main() {
+  Solution sn = Solution();
+  print(sn.sortArrayByParity([2, 4, 3, 1])); 
+}
