@@ -1,0 +1,11 @@
+class Solution {
+  String truncateSentence(String s, int k) {
+    return s.split(' ').take(k).join(' ');
+  }
+}
+void main() {
+  Solution obj = Solution();
+  print(obj.truncateSentence("Hello how are you Contestant", 4)); 
+  print(obj.truncateSentence("What is the solution to this problem", 4)); 
+  print(obj.truncateSentence("chopper is not a tanuki", 5)); 
+}
