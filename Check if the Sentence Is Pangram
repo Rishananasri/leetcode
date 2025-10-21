@@ -1,0 +1,12 @@
+class Solution {
+  bool checkIfPangram(String sentence) {
+    Set<String> letters = sentence.split('').toSet();
+    return letters.length == 26;
+  }
+}
+
+void main() {
+  Solution obj = Solution();
+  print(obj.checkIfPangram("thequickbrownfoxjumpsoverthelazydog")); 
+  print(obj.checkIfPangram("leetcode")); 
+}
