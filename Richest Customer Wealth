@@ -1,0 +1,32 @@
+class Solution {
+  int maximumWealth(List<List<int>> accounts) {
+    int sum = 0;
+    int maxwealth = 0;
+    int n = accounts.length;
+    for (int i = 0; i < n; i++) {
+      sum = 0;
+      for (int j = 0; j < accounts[i].length; j++) {
+        sum += accounts[i][j];
+      }
+      if (sum > maxwealth) {
+        maxwealth = sum;
+      }
+    }
+    return maxwealth;
+  }
+}
+void main() {
+  Solution sn = Solution();
+  print(
+    sn.maximumWealth([
+      [1, 2],
+      [3, 4],
+    ]),
+  );
+  print(
+    sn.maximumWealth([
+      [1, 2,6],
+      [3, 4,9],
+    ]),
+  );
+}
