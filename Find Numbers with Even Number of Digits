@@ -1,0 +1,16 @@
+class Solution {
+  int findNumbers(List<int> nums) {
+    int a = 0;
+    List<int> lengths = nums.map((n) => n.toString().length).toList();
+    for (int i = 0; i < lengths.length; i++) {
+      if (lengths[i].isEven) {
+        a += 1;
+      }
+    }
+    return a;
+  }
+}
+void main() {
+  Solution sn = Solution();
+  print(sn.findNumbers([12, 32,345,4567]));
+}
