@@ -1,0 +1,33 @@
+List<String> findWords(List<String> words) {
+  final row1 = {'q','w','e','r','t','y','u','i','o','p'};
+  final row2 = {'a','s','d','f','g','h','j','k','l'};
+  final row3 = {'z','x','c','v','b','n','m'};
+  
+  List<String> result = [];
+  
+  for (var word in words) {
+    String lowerWord = word.toLowerCase();
+    
+    Set<String> row;
+    if (row1.contains(lowerWord[0])) {
+      row = row1;
+    } else if (row2.contains(lowerWord[0])) {
+      row = row2;
+    } else {
+      row = row3;
+    }
+        bool allInRow = lowerWord.split('').every((ch) => row.contains(ch));
+    
+    if (allInRow) {
+      result.add(word);
+    }
+  }
+  
+  return result;
+}
+
+void main() {
+  print(findWords(["Hello","Alaska","Dad","Peace"])); 
+  print(findWords(["omk"]));                     
+  print(findWords(["adsdf","sfd"]));                
+}
