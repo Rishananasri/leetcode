@@ -1,0 +1,23 @@
+class Solution {
+  int findLucky(List<int> arr) {
+    Map<int, int> freq = {};
+
+    for (int num in arr) {
+      freq[num] = (freq[num] ?? 0) + 1;
+    }
+
+    int lucky = -1;
+    freq.forEach((num, count) {
+      if (num == count) {
+        lucky = lucky > num ? lucky : num;
+      }
+    });
+
+    return lucky;
+  }
+}
+
+void main() {
+  Solution sn = Solution();
+  print(sn.findLucky([1, 2,3,3,3]));
+}
