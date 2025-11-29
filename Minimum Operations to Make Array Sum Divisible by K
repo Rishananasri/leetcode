@@ -1,0 +1,19 @@
+class Solution {
+  int minOperations(List<int> nums, int k) {
+    int a = 0;
+    for (int num in nums) {
+      a += num;
+    }
+    int b = a % k;
+    if (b == 0) {
+      return b;
+    } else {
+      return b;
+    }
+  }
+}
+
+void main() {
+  Solution sn = Solution();
+  print(sn.minOperations([2, 4, 1], 4));
+}
