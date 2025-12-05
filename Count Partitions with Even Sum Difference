@@ -1,0 +1,17 @@
+class Solution {
+  int countPartitions(List<int> nums) {
+    int total = nums.reduce((a, b) => a + b);
+
+    if (total % 2 != 0) {
+      return 0;
+    }
+
+    return nums.length - 1;
+  }
+}
+
+
+void main() {
+  Solution sn = Solution();
+  print(sn.countPartitions([10,10,3,6,7]));
+}
