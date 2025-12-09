@@ -1,0 +1,18 @@
+class Solution {
+  List<int> numberGame(List<int> nums) {
+   nums.sort();
+    List<int> arr = [];
+    for (int i = 0; i < nums.length; i += 2) {
+      int alice = nums[i];
+      int bob = nums[i + 1];
+      arr.add(bob);
+      arr.add(alice);
+    }
+    return arr;
+  }
+}
+
+void main() {
+  Solution sn = Solution();
+  print(sn.numberGame([5, 4, 2, 3]));
+}
