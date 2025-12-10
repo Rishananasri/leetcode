@@ -1,0 +1,18 @@
+class Solution {
+  String firstPalindrome(List<String> words) {
+    for (int i = 0; i < words.length; i++) {
+      if (words[i].split("").reversed.join() == words[i]) {
+        return words[i];
+      }
+    }
+    return "";
+  }
+}
+
+void main() {
+  Solution sn = Solution();
+  print(sn.firstPalindrome(["abc", "car", "ada", "racecar", "cool"]));
+  print(sn.firstPalindrome(["notapalindrome", "racecar"]));
+    print(sn.firstPalindrome(["def","ghi"]));
+
+}
