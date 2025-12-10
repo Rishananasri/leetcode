@@ -1,0 +1,22 @@
+class Solution {
+  int countDigits(int num) {
+    int count = 0;
+    List<int> digits = num
+        .toString()
+        .split('')
+        .map(int.parse)
+        .toList();
+
+    for (int d in digits) {
+      if (num % d == 0) {
+        count++;
+      }
+    }
+    return count;
+  }
+}
+
+void main() {
+  Solution sn = Solution();
+  print(sn.countDigits(121)); 
+}
