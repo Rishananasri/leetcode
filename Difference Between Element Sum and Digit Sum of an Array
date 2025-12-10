@@ -1,0 +1,23 @@
+
+class Solution {
+  int differenceOfSum(List<int> nums) {
+    int sumElements = 0;
+    int sumDigits = 0;
+
+    for (int num in nums) {
+      sumElements += num;
+
+      for (var digit in num.toString().split('')) {
+        sumDigits += int.parse(digit);
+      }
+    }
+
+    return sumElements - sumDigits;
+  }
+}
+
+void main() {
+  Solution sn = Solution();
+  print(sn.differenceOfSum([1, 15, 6, 3]));
+  print(sn.differenceOfSum([1, 2, 3, 4])); 
+}
