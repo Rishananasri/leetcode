@@ -1,0 +1,18 @@
+class Solution {
+  int numberOfEmployeesWhoMetTarget(List<int> hours, int target) {
+    int count = 0;
+    for (int i = 0; i < hours.length; i++) {
+      if (hours[i] >= target) {
+         count++;
+      }
+    }
+    return count;
+  }
+}
+
+void main() {
+  Solution sn = Solution();
+  print(sn.numberOfEmployeesWhoMetTarget([5, 1, 4, 2, 2], 6));
+    print(sn.numberOfEmployeesWhoMetTarget([1,2,3,4,5], 2));
+
+}
