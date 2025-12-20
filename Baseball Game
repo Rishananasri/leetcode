@@ -1,0 +1,26 @@
+class Solution {
+  int calPoints(List<String> operations) {
+    List<int> record = [];
+
+    for (String op in operations) {
+      if (op == "C") {
+        record.removeLast();
+      } else if (op == "D") {
+        record.add(record.last * 2);
+      } else if (op == "+") {
+        int last = record.last;
+        int secondLast = record[record.length - 2];
+        record.add(last + secondLast);
+      } else {
+        record.add(int.parse(op));
+      }
+    }
+
+    return record.fold(0, (sum, val) => sum + val);
+  }
+}
+
+void main() {
+  Solution sn = Solution();
+  print(sn.calPoints(["5", "2", "C", "D", "+"]));
+}
